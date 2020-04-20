@@ -31,7 +31,6 @@ namespace Reflexion_Quete_1
             GetAllProperties(objectType);
             GetAllFields(objectType);
             GetAllMethods(objectType);
-            
         }
 
         private static void GetAllProperties(Type objectType)
@@ -41,7 +40,6 @@ namespace Reflexion_Quete_1
             foreach (PropertyInfo prop in pi)
                 Console.WriteLine("->{0} \n \t", prop.Name);
             Console.WriteLine("");
-
         }
 
         private static void GetAllFields(Type objectType)
@@ -61,31 +59,5 @@ namespace Reflexion_Quete_1
                 Console.WriteLine("->{0} \n \t Private ? {1} \n \t Public ? {2} \n \t Static ? {3}", m.Name, m.IsPrivate, m.IsPublic, m.IsStatic);
             Console.WriteLine("");
         }
-
-
-        /*private static void DisplayAllAttributes(object reflected)
-        {
-            Type objectType = reflected.GetType();
-
-            PropertyInfo[] properties = objectType.GetProperties(BindingFlags.NonPublic | BindingFlags.Instance);
-            MethodInfo[] methods = objectType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
-            FieldInfo[] fields = objectType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
-
-            Console.WriteLine("Properties");
-            foreach (var p in properties)
-            {
-                Console.WriteLine("\t" + p);
-            }
-            Console.WriteLine("Methods");
-            foreach (var m in methods)
-            {
-                Console.WriteLine("\t" + m);
-            }
-            Console.WriteLine("Fields");
-            foreach (var f in fields)
-            {
-                Console.WriteLine("\t" + f);
-            }
-        }*/
     }
 }
